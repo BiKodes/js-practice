@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Object basics: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    let bandInfo;
+
+    // Add your code here
+    let bands = {
+  name : 'Hillsong Worship',
+  nationality : 'Australia',
+  genre : 'Worship',
+  members : 4,
+  formed : 1995,
+  split : false,
+  albums : [ 
+      {5 : {
+     name : 'hillsPraise',
+     released : 1997 
+}},
+      {6 : {
+     name : 'youShine',
+     released : 1998
+}},
+      {9 : {
+     name : 'hope',
+     released : 2003
+}}
+
+],
+
+bandInfo : function() {
+   alert('Hello, my favourite band is '+ this.name + '. It is from ' + this.nationality + '. It sings ' + this.genre + '. It has ' + this.members + ' formed in ' + this.formed + ' and has it remours on it spliting is ' + this.split + '. It has produced the following albums: ' + this.albums +'.');
+}
+      
+};
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+    let para1 = document.createElement('p');
+    para1.textContent = bandInfo;
+    section.appendChild(para1);
+  </script>
+
+</html>

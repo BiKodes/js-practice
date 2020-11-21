@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+
+  </body>
+
+    <script>
+
+        // function createNewPerson(name) {
+        //     const obj = {};
+        //     obj.name = name;
+        //     obj.greeting = function() {
+        //         alert('Hi! I\'m ' + obj.name + '.');
+        //     };
+        //     return obj;
+        // }
+
+        // constructor function:
+
+        // function Person(name) {
+        //   this.name = name;
+        //   this.greeting = function() {
+        //     alert('Hi! I\'m ' + this.name + '.');
+        //   };
+        // }
+
+        // // call a constructor to create some objects:
+
+        // let person1 = new Person('Bob');
+        // let person2 = new Person('Sarah');
+
+        function Person(first, last, age, gender, interests) {
+          this.name = {
+            first : first,
+            last : last
+          },
+
+          this.age = age;
+          this.gender = gender;
+          this.interests = interests;
+
+          if ( gender === 'male' || gender === 'Male' || gender === 'm' || gender === 'M') {
+
+          this.bio = function() {
+            alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.'); 
+          };
+        } else if ( gender === 'female' || gender === 'Female' || gender === 'f' || gender === 'F') {
+          this.bio = function() {
+            alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + 'years old. She likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+          };
+        } else {
+          alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + 'years old. My likes are ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+        }
+
+        if (interests === [0:1]) {
+          return interests = this.interests;
+        } else if ( interests === [0:1]) {
+          return interests = this.interests[0] + this.name[1];
+        } else {
+
+          for (let i === 0; i < interests.length; i++) {
+             if ( interests === interests.length - 1) {
+               interests += 'and' + interests[i] + '.';
+             } else {
+              
+               interests += interests[i] + ',';
+              }
+
+          }
+        }
+
+          this.greeting = function() {
+            alert('Hi! I\'m ' + this.name.first + '.');
+          };
+
+        }
+        
+        let person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+        let person2 = new Person('Nuru', 'Biko', 2, 'male', ['Coding', 'Reading', 'Muay Thai', 'Ministry']);
+        let person3 = new Person('Zawadi', 'Biko', 1, 'female', ['Hacking', 'Reading', 'Tennis']);
+        
+    </script>
+</html>

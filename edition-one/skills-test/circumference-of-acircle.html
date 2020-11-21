@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <label for="">Enter The Circles Radius:</label>
+    <input type="text" class="numberInput">
+    <p></p>
+
+
+    <script type="text/javascript">
+
+    const input = document.querySelector('numberInput');
+    const para = document.querySelector('p')
+
+    function circle(radius) {
+      return radius * 2 * Math.PI;
+    }
+
+    input.onchange = function(){
+      const radius = input.value;
+
+      if (isNaN(radius)) {
+        para.textContent = 'Please Enter a Number';
+      } else {
+        para.textContent = 'The circle for' radius circle(radius);
+      }
+    }
+
+    </script>
+  </body>
+</html>

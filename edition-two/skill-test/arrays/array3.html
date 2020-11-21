@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Arrays: Task 3</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    let myArray = [ "Ryu", "Ken", "Chun-Li", "Cammy", "Guile", "Sakura", "Sagat", "Juri" ];
+
+    // Add your code here
+
+    myArray.pop();
+myArray.push('Nuru','Zawadi');
+myArray.splice(1, 0,'(0)')
+myArray.splice(3, 0, '(1)');
+myArray.splice(5, 0, '(2');
+myArray.splice(7, 0, '(3)');
+myArray.splice(9, 0, '(4)');
+myArray.splice(11, 0, '(5)');
+myArray.splice(13, 0, '(6)');
+myArray.splice(15, 0, '(7)');
+myArray.splice(17, 0, '(8)');
+
+let myString = myArray.join('-');
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    let para1 = document.createElement('p');
+    para1.textContent = myString;
+
+    section.appendChild(para1);
+  </script>
+
+</html>

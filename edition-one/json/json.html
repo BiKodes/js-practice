@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple JSON exampl</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // JSON is a text-based data format following JavaScript object syntax.
+    // JSON exists as a string — useful when you want to transmit data across a network.
+    // It needs to be converted to a native JavaScript object when you want to access the data.
+    // Converting a string to a native object is called deserialization,
+    // Converting a native object to a string so it can be transmitted across the network is called serialization.
+
+    {
+      "squadName": "Super hero squad",
+      "homeTown": "Metro city",
+      "formed": 2016,
+      "secretBase": "Super tower",
+      "active": true,
+      "members": [
+        {
+          "name": "Molecule Man",
+          "age": 29,
+          "secretIdentity": "Dan Jukes",
+          "powers": [
+            "Radiation resistance",
+            "Turning tiny",
+            "Radiation blast"
+          ]
+        },
+        {
+          "name": "Madame Uppercut",
+          "age": 39,
+          "secretIdentity": "Jane Wilson",
+          "powers": [
+            "Million tonne punch",
+            "Damage resistance",
+            "Superhuman reflexes"
+          ]
+        },
+        {
+          "name": "Eternal Flame",
+          "age": 1000000,
+          "secretIdentity": "Unknown",
+          "powers": [
+            "Immortality",
+            "Heat Immunity",
+            "Inferno",
+            "Teleportation",
+            "Interdimensional travel"
+          ]
+        }
+      ]
+    }
+
+    superHeroes.homeTown
+    superHeroes['active']
+
+    /* access the third superpower of the second hero listed in the members list, you'd do this: */
+
+    superHeroes['members'][1]['powers'][2]
+
+
+
+
+    // parse(): Accepts a JSON string as a parameter, and returns the corresponding JavaScript object.
+    // stringify(): Accepts an object as a parameter, and returns the equivalent JSON string form.
+
+    
+
+
+    </script>
+  </body>
+</html>

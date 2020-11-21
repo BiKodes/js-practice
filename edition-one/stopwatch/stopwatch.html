@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple setInterval clock</title>
+    <style>
+      p {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="clock"></p>
+    <button class = "start">Start</button>
+    <button class = "stop">Stop</button>
+    <button class = "reset">Reset</button>
+    <script>
+
+    //counter variable for the number of seconds and set to zero
+    let secCount = 0;
+
+    //global variable to store the interval when it is active.
+    let stopWatch;
+
+    const startBtn = document.querySelector('.start');
+    const stopBtn = document.querySelector('.stop');
+    const resetBtn = document.querySelector('.reset');
+    const clockPara = document.querySelector('.clock');
+
+      // Function to calculate the current hours, minutes, and seconds,
+      function timeElapsed() {
+
+        //Calculate the current hours, minutes, and seconds,
+
+        let hours = Math.floor(secCount / 3600);
+        let minutes = Math.floor(secCount % 3600 /60);
+        let seconds = Math.floor(secCount% 60);
+
+        // Display a leading zero if the values are less than ten
+
+        let hourShow = (hours < 10) ? '0' + hours : hours;
+        let minuteShow = (minutes < 10) ? '0' + minutes : minutes;
+        let secondShow = (seconds < 10) ? '0' + seconds : seconds;
+
+        // stopwatch display time into the display paragraph
+
+        clockPara.textContent = hourShow + ':' + minuteShow + ':' + secondShow;
+
+        // Increment the second counter
+
+        secCount++;
+
+      }
+
+      //On start button press,start running timeElapsed() once per second using setInterval()
+      startBtn.addEventListener('click', () => {
+        stopWatch = setInterval(timeElapsed, 1000);
+        startBtn.disabled = true;
+      })
+
+      // Stop button pressed clear the interval to stop the count
+
+      stopBtn.addEventListener('click', () => {
+        clearInterval(stopWatch);
+        startBtn.disabled = false;
+      })
+
+      // reset button is pressed, set the counter back to zero, then immediately update timeElapsed
+
+      resetBtn.addEventListener('click', () => {
+        clearInterval(stopWatch);
+        startBtn.disabled = false;
+        secCount = 0;
+        timeElapsed();
+
+      })
+      /Display the clock on reload immediately
+      timeElapsed()
+    </script>
+  </body>
+</html>
